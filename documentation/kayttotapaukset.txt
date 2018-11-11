@@ -1,0 +1,6 @@
+Käyttäjä etsii kysymystä aihepiireistä.
+Käyttäjä avaa aihepiirin.
+Käyttäjä kysyy kysymyksen.
+Vastaaja kirjautuu palveluun.
+Vastaaja vastaa kysymykseen.
+Vastaaja päivittää vastauksen. 
