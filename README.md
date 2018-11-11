@@ -3,6 +3,6 @@ Usein kysytyt kysymykset on lähes jokaiselta internetsivustolta löytyvä palve
 
 ### [Linkki appiin](https://ukk-ep.herokuapp.com/ "Usein kysytyt kysymykset")
 
-#### [Käyttötapauksia](documentation/kayttotapauksia.txt)
+#### [Käyttötapauksia](documentation/kayttotapaukset.txt)
 
 #### [Alustava tietokantakaavio](documentation/f091756c.png)
