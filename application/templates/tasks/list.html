@@ -4,7 +4,7 @@
   <table>
     <tr>
       <th>Kysymys</th>
-      <th>Joku</th>
+      <th>Vastaus</th>
       <th></th>
     </tr>
     {% for task in tasks %}
@@ -12,9 +12,15 @@
       <td>{{ task.name }}</td>
       <td>{{ task.done }}</td>
       <td>
-	<form method="POST" action="{{ url_for('tasks_set_done', task_id=task.id) }}">
-	  <input type="submit" value="Joku"/>
+	<form method="POST" action="{{ url_for('tasks_set_done') }}">
+          <input type="hidden" value="{{task.done}}" name="vanha">
+          <input type="text" value="{{task.done}}" name="uusi">
+	  <input type="submit" value="Muokkaa vastausta"/>
 	</form>
+        <form method="POST" action="{{ url_for('delete') }}">
+          <input type="hidden" value="{{task.id}}" name="id">
+          <input type="submit" value="Poista">
+        </form>
       </td>
     </tr>
     {% endfor %}
