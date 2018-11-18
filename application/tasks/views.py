@@ -13,7 +13,7 @@ def tasks_index():
 def tasks_form():
     return render_template("tasks/new.html", form = TaskForm())
 
-@app.route("/tasks/", methods=["POST"])
+@app.route("/tasks/paivita", methods=["POST"])
 @login_required
 def tasks_set_done():
     uusi = request.form.get("uusi")
