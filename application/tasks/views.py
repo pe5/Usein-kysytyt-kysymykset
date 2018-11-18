@@ -13,12 +13,13 @@ def tasks_index():
 def tasks_form():
     return render_template("tasks/new.html", form = TaskForm())
 
-@app.route("/tasks/<task_id>/", methods=["POST"])
+@app.route("/tasks/", methods=["POST"])
 @login_required
-def tasks_set_done(task_id):
-
-    t = Task.query.get(task_id)
-    t.done = True
+def tasks_set_done():
+    uusi = request.form.get("uusi")
+    vanha = request.form.get("vanha")
+    task = Task.query.filter_by(done=vanha).first()
+    task.done = uusi
     db.session().commit()
   
     return redirect(url_for("tasks_index"))
@@ -39,3 +40,12 @@ def tasks_create():
     db.session().commit()
   
     return redirect(url_for("tasks_index"))
+
+@app.route("/delete", methods=["POST"])
+def delete():
+    id = request.form.get("id")
+    task = Task.query.filter_by(id=id).first()
+    db.session.delete(task)
+    db.session.commit()
+    return redirect("/")
+
