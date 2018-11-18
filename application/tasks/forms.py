@@ -3,7 +3,7 @@ from wtforms import StringField, BooleanField, validators
 
 class TaskForm(FlaskForm):
     name = StringField("Kysymys", [validators.Length(min=5)])
-    answer = BooleanField("Vastattu")
+    answer = StringField("Vastaus")
  
     class Meta:
         csrf = False
