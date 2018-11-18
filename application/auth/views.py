@@ -33,8 +33,7 @@ def auth_new():
 @app.route("/auth/", methods=["POST"])
 def auth_create():
     form = LoginForm(request.form)
-    t = User(form.username.data)
-    t.password = form.password.data
+    t = User(form.name.data, form.username.data, form.password.data)
     
     db.session().add(t)
     db.session().commit()
