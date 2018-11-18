@@ -8,3 +8,5 @@ Usein kysytyt kysymykset on lähes jokaiselta internetsivustolta löytyvä palve
 #### [Alustava tietokantakaavio](documentation/f091756c.png)
 
 ##### Testitunnukset joko tunnus "testi" salasana "omena" tai voi luoda oman käyttäjän.
+
+###### CRUD on periaatteessa kaikki toiminnallisia, mutta jokainen käyttäjä voi tehdä jokaisen osan näistä, tätä tullaan muuttamaan myöhemmin.
