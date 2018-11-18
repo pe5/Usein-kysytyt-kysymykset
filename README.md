@@ -6,3 +6,5 @@ Usein kysytyt kysymykset on lähes jokaiselta internetsivustolta löytyvä palve
 #### [Käyttötapauksia](documentation/kayttotapaukset.txt)
 
 #### [Alustava tietokantakaavio](documentation/f091756c.png)
+
+##### Testitunnukset joko tunnus "testi" salasana "omena" tai voi luoda oman käyttäjän.
