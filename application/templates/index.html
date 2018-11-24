@@ -1,7 +1,23 @@
-{% block body %}
-  <p>
-    Usein kysytyt kysymykset
-  </p>
-{% endblock %}
-
 {% extends "layout.html" %}
+
+{% block body %}
+<p>
+  Usein kysytyt kysymykset
+</p>
+
+{% if needs_answers is defined %}
+<p>
+  Seuraavat kysymykset kaipaavat vastauksia:
+</p>
+
+<ul>
+  {% for task in needs_answers %}
+  <li>
+    {{task.id}} {{task.name}}
+  </li>
+  {% endfor %}
+</ul>
+
+{% endif %}
+
+{% endblock %}
