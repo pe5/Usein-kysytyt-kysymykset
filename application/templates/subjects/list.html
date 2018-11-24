@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <table>
+    <tr>
+      <th>Aihealue</th>
+      <th></th>
+    </tr>
+    {% for sub in subjects %}
+    <tr>
+      <td>{{ sub.name }}</td>
+      <td>
+	<form method="POST" action="{{ url_for('tasks_set_done') }}">
+          <input type="hidden" value="{{task.done}}" name="vanha">
+          <input type="text" value="{{task.done}}" name="uusi">
+	  <input type="submit" value="Muokkaa vastausta"/>
+	</form>
+        <form method="POST" action="{{ url_for('delete') }}">
+          <input type="hidden" value="{{task.id}}" name="id">
+          <input type="submit" value="Poista">
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

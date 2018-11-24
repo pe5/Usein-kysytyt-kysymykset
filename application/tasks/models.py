@@ -9,6 +9,8 @@ class Task(Base):
 
     account_id = db.Column(db.Integer, db.ForeignKey('account.id'),
                            nullable=False)
+    subject_id = db.Column(db.Integer, db.ForeignKey('subject.id'),
+                           nullable=False)
 
     def __init__(self, name):
         self.name = name
