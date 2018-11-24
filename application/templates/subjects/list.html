@@ -6,18 +6,12 @@
       <th>Aihealue</th>
       <th></th>
     </tr>
-    {% for sub in subjects %}
+    {% for subject in subjects %}
     <tr>
-      <td>{{ sub.name }}</td>
+      <td>{{ subject.name }}</td>
       <td>
-	<form method="POST" action="{{ url_for('tasks_set_done') }}">
-          <input type="hidden" value="{{task.done}}" name="vanha">
-          <input type="text" value="{{task.done}}" name="uusi">
-	  <input type="submit" value="Muokkaa vastausta"/>
-	</form>
-        <form method="POST" action="{{ url_for('delete') }}">
-          <input type="hidden" value="{{task.id}}" name="id">
-          <input type="submit" value="Poista">
+        <form method="POST" action="{{ url_for('subjects_id', subject_id=subject.id) }}">
+          <input type="submit" value="Lista">
         </form>
       </td>
     </tr>

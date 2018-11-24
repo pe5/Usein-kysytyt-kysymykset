@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <table>
+    <tr>
+      <th>Kysymykset:</th>
+      <th></th>
+    </tr>
+    {% for task in tasks %}
+    <tr>
+      <td>{{ task.name }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}
