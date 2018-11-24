@@ -3,6 +3,7 @@ from flask import redirect, render_template, request, url_for
 from flask_login import login_required, current_user
 from application.tasks.models import Task
 from application.tasks.forms import TaskForm
+from application.subjects.models import Subject
 
 @app.route("/tasks", methods=["GET"])
 def tasks_index():
@@ -35,7 +36,16 @@ def tasks_create():
     t = Task(form.name.data)
     t.done = form.answer.data
     t.account_id = current_user.id
-  
+    apu = Subject.find_id_of_subject(form.subject.data)
+    if apu != -999:
+        t.subject_id = apu
+    else:
+        s = Subject(form.subject.data)
+        db.session().add(s)
+        db.session().commit()
+        apu2 = Subject.find_id_of_subject(form.subject.data)
+        t.subject_id = apu2
+
     db.session().add(t)
     db.session().commit()
   
